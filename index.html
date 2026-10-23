@@ -27,7 +27,7 @@
 (()=>{'use strict';
 /* ВСТАВЬ Project URL и Publishable key из Supabase → Project Settings → API Keys.
    Никогда не вставляй sb_secret_... или service_role key в браузерный код. */
-const SUPABASE_URL="PASTE_PROJECT_URL_HERE",SUPABASE_PUBLISHABLE_KEY="https://prsejrymwdqwupagavyw.supabase.co";
+const SUPABASE_URL="https://prsejrymwdqwupagavyw.supabase.co",SUPABASE_PUBLISHABLE_KEY="https://prsejrymwdqwupagavyw.supabase.co";
 const $=id=>document.getElementById(id), todayKey=()=>{let d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
 let sb,user,tasks=[],habits=[],logs=[],projects=[],goals=[],journal=[],stats=[],focusMinutes=0,signUp=false,seconds=1500,timerOn=false,timerId=null;
 const ready=()=>SUPABASE_URL.startsWith('https://')&&!SUPABASE_URL.includes('PASTE_')&&SUPABASE_PUBLISHABLE_KEY&&!SUPABASE_PUBLISHABLE_KEY.includes('sb_publishable_0PsZFlD7xN7UYVNiMdJrpw_AazJ-98J');
