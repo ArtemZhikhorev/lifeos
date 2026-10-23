@@ -27,10 +27,10 @@
 (()=>{'use strict';
 /* ВСТАВЬ Project URL и Publishable key из Supabase → Project Settings → API Keys.
    Никогда не вставляй sb_secret_... или service_role key в браузерный код. */
-const SUPABASE_URL="PASTE_PROJECT_URL_HERE",SUPABASE_PUBLISHABLE_KEY="PASTE_PUBLISHABLE_KEY_HERE";
+const SUPABASE_URL="PASTE_PROJECT_URL_HERE",SUPABASE_PUBLISHABLE_KEY="https://prsejrymwdqwupagavyw.supabase.co";
 const $=id=>document.getElementById(id), todayKey=()=>{let d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
 let sb,user,tasks=[],habits=[],logs=[],projects=[],goals=[],journal=[],stats=[],focusMinutes=0,signUp=false,seconds=1500,timerOn=false,timerId=null;
-const ready=()=>SUPABASE_URL.startsWith('https://')&&!SUPABASE_URL.includes('PASTE_')&&SUPABASE_PUBLISHABLE_KEY&&!SUPABASE_PUBLISHABLE_KEY.includes('PASTE_');
+const ready=()=>SUPABASE_URL.startsWith('https://')&&!SUPABASE_URL.includes('PASTE_')&&SUPABASE_PUBLISHABLE_KEY&&!SUPABASE_PUBLISHABLE_KEY.includes('sb_publishable_0PsZFlD7xN7UYVNiMdJrpw_AazJ-98J');
 const showAuth=()=>{$('authView').classList.remove('hidden');$('appView').classList.add('hidden')},showApp=()=>{$('authView').classList.add('hidden');$('appView').classList.remove('hidden')};
 const msg=(id,s,type='error')=>{$(id).className='status '+type;$(id).textContent=s}, err=e=>e?.message||'Что-то пошло не так. Попробуй ещё раз.';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
